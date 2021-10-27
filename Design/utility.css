@@ -29,13 +29,16 @@ body {
    width: 9rem;
    box-sizing: border-box;
    background-color: #fff;
-   border: 3px solid;
+   border: 3px solid #000;
    border-radius: 7px;
    padding: 6px 0;
    transition: .3s;
+   color: #000;
+   text-decoration: none;
+   font-size: 14px;
 }
 
-a {
+p a {
    color: blue;
 }
 
