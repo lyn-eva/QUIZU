@@ -1,11 +1,16 @@
 const optionBox = document.getElementsByClassName('option-box');
 const start = document.getElementById('start');
+const back = document.getElementById('back');
 const welcome = document.getElementById('welcome');
 const customize = document.getElementById('customize');
 
 start.addEventListener('click', () => {
    welcome.style.display = "none";
    customize.style.display = "flex";
+})
+back.addEventListener('click', () => {
+   welcome.style.display = "flex";
+   customize.style.display = "none";
 })
 
 Array.from(optionBox).forEach( (item, index) => {
