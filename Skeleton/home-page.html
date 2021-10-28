@@ -6,15 +6,106 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Quizu</title>
    <link rel="stylesheet" href="../Design/utility.css">
+   <link rel="stylesheet" href="../Design/home-page.css">
    <link rel="icon" href="../favicon-16x16.png">
 </head>
 <body>
-   <main class="ctr flex">
+   <main class="ctr">
       <p class="small">Questions are contributed by <a href="https://opentdb.com/" aria-label="opentdb.com">Open Trivia DB</a>.</p>
-      <h1 class="large mt-2 mb-3">QUIZU</h1>
-      <a class="btn" href="">Start Game</a>
-      <a class="btn mt-1" href="">Your Scores</a>
-      <a class="btn mt-1" href="">How to play?</a>
+      <div id="welcome" class="flex">
+         <h1 class="large mt-2 mb-3">QUIZU</h1>
+         <button class="btn" id="start">Start Game</button>
+         <a class="btn mt-1" href="">Your Scores</a>
+         <a class="btn mt-1" href="">How to play?</a>
+      </div>
+
+      <div id="customize" class="flex mt-3">
+         <div class="custom-select">
+            <label for="questions">Number of Questions:</label>
+            <div id="questions" class="option-box">
+               <span>5</span>
+               <ul class="options">
+                  <li class="option" id="5">5</li>
+                  <li class="option" id="7">7</li>
+                  <li class="option" id="10">10</li>
+                  <li class="option" id="13">13</li>
+                  <li class="option" id="15">15</li>
+                  <li class="option" id="17">17</li>
+                  <li class="option" id="20">20</li>
+                  <li class="option" id="23">23</li>
+                  <li class="option" id="25">25</li>
+                  <li class="option" id="30">30</li>            
+               </ul>
+            </div>
+            <div class="custom-arrow"></div>
+         </div>
+
+         <div class="custom-select">
+            <label for="category">Select Category:</label>
+            <div id="category" class="option-box">
+               <span>Any Category</span>
+               <ul class="options">
+                  <li class="option" id="any">Any Category</li>
+                  <li class="option" id="9">General Knowledge</li>
+                  <li class="option" id="10">Entertainment: Books</li>
+                  <li class="option" id="11">Entertainment: Film</li>
+                  <li class="option" id="12">Entertainment: Music</li>
+                  <li class="option" id="13">Entertainment: Musicals &amp; Theatres</li>
+                  <li class="option" id="14">Entertainment: Television</li>
+                  <li class="option" id="15">Entertainment: Video Games</li>
+                  <li class="option" id="16">Entertainment: Board Games</li>
+                  <li class="option" id="17">Science &amp; Nature</li>
+                  <li class="option" id="18">Science: Computers</li>
+                  <li class="option" id="19">Science: Mathematics</li>
+                  <li class="option" id="20">Mythology</li>
+                  <li class="option" id="21">Sports</li>
+                  <li class="option" id="22">Geography</li>
+                  <li class="option" id="23">History</li>
+                  <li class="option" id="24">Politics</li>
+                  <li class="option" id="25">Art</li>
+                  <li class="option" id="26">Celebrities</li>
+                  <li class="option" id="27">Animals</li>
+                  <li class="option" id="28">Vehicles</li>
+                  <li class="option" id="29">Entertainment: Comics</li>
+                  <li class="option" id="30">Science: Gadgets</li>
+                  <li class="option" id="31">Entertainment: Japanese Anime &amp; Manga</li>
+                  <li class="option" id="32">Entertainment: Cartoon &amp; Animations</li>
+               </ul>
+            </div>
+            <div class="custom-arrow"></div>
+         </div>
+
+         <div class="custom-select">
+            <label for="difficulty">Select Difficulty:</label>
+            <div id="difficulty" class="option-box">
+               <span>Any Difficulty</span>
+               <ul class="options">
+                  <li class="option" id="any" class="option">Any Difficulty</li>
+                  <li class="option" id="easy" class="option">Easy</li>
+                  <li class="option" id="medium" class="option">Medium</li>
+                  <li class="option" id="hard" class="option">Hard</li>
+               </ul>
+            </div>
+            <div class="custom-arrow"></div>
+         </div>
+
+         <div class="custom-select">
+            <label for="type">Select Type:</label>
+            <div id="type" class="option-box">
+               <span>Any Type</span>
+               <ul class="options">
+                  <li class="option" id="any" class="option">Any Type</li>
+                  <li class="option" id="multiple" class="option">Multiple Choice</li>
+                  <li class="option" id="boolean" class="option">True / False</li>
+               </ul>
+            </div>
+            <div class="custom-arrow"></div>
+         </div>
+         
+         <a class="btn mt-2" href="">Start Playing</a>
+      </div>
    </main>
+
+   <script src="../JS/home-page.js"></script>
 </body>
 </html>
