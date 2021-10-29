@@ -54,29 +54,40 @@ function removeActive(i) {
 
 
 // API
-let url = "https://opentdb.com/api.php?amount=3"
+
 
 fetchData.addEventListener('click', e => {
    e.preventDefault();
-   createAJAXrequest(options)
+   createAJAXrequest(options);
 });
 
 function createAJAXrequest(opt) {
-   Array.from(opt).forEach((iter) => {
-      console.log(iter.previousElementSibling.innerHTML);
-   }) 
-}
+   let url = "https://opentdb.com/api.php?"
+   const amount = opt[0].previousElementSibling.innerText;
+   const category = opt[1].previousElementSibling.innerText;
+   const diff = opt[2].previousElementSibling.innerText;
+   const type = opt[3].previousElementSibling.innerText;
+   
+   url += `amount=${amount}`;
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET', url, true);
-xhr.send()
+   if (category != "Any Category") {
+      url += ``
+   }
+   console.log(url);
 
-xhr.onload = function () {
-   if (this.status == 200) {
-      // console.log(this.responseText);
+   // request to API
+   const xhr = new XMLHttpRequest();
+   xhr.open('GET', url, true);
+   xhr.send()
+
+   xhr.onload = function () {
+      if (this.status == 200) {
+         console.log(this.responseText);
+      }
+   }
+
+   xhr.onerror = function () {
+      console.log('error');
    }
 }
 
-xhr.onerror = function () {
-   console.log('error');
-}
