@@ -6,10 +6,11 @@
 }
 
 body {
-   background: url("../scattered-forcefields.svg") no-repeat;
+   background: url("../images/scattered-forcefields.svg") no-repeat;
    height: 100vh;
    padding-top: 0.1px;
    text-align: center;
+   overflow: hidden;
 }
 
 .ctr {

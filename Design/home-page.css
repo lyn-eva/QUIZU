@@ -1,10 +1,9 @@
-#welcome {
-   transition: .5s ease-in;
+#welcome, #customize {
+   transition: .5s ease-in-out;
 }
 
 #customize {
    display: none;
-   transition: .5s ease-in;
 }
 
 .custom-select + .custom-select {

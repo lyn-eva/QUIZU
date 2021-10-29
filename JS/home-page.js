@@ -1,27 +1,35 @@
 const optionBox = document.getElementsByClassName('option-box');
+const options = Array.from(document.getElementsByClassName('options'));
 const start = document.getElementById('start');
 const back = document.getElementById('back');
 const welcome = document.getElementById('welcome');
 const customize = document.getElementById('customize');
+const fetchData = document.getElementById('fetch-data');
+
 
 start.addEventListener('click', () => {
    welcome.style.display = "none";
    customize.style.display = "flex";
-})
+});
+
 back.addEventListener('click', () => {
-   welcome.style.display = "flex";
-   customize.style.display = "none";
+   customize.style.display = "none"
+   welcome.style.display = "flex"
 })
 
 Array.from(optionBox).forEach( (item, index) => {
-   item.addEventListener('click', () => {
-      let dropDown = item.lastElementChild;
-      if (dropDown !== null && dropDown.classList.contains('options')) {
+   item.addEventListener('click', (e) => {
+      let dropDown = e.target.lastElementChild;
+      if (dropDown !== null && dropDown.className != "options drop-down") {
          removeActive(index);
-         dropDown.classList.toggle('drop-down');
+         dropDown.classList.add('drop-down');
          
-         let option = dropDown.childNodes;
+         let option = Array.from(dropDown.childNodes);
+         option = option.filter((iter) => iter.nodeType == 1);
          selectedTypes(option);
+      }
+      else if(dropDown !== null && dropDown.className == "options drop-down") {
+         dropDown.classList.remove('drop-down');
       }
    });
 });
@@ -31,8 +39,8 @@ function selectedTypes(opt) {
       iter.addEventListener('click', (e) => {
          let temp = iter.parentNode.previousElementSibling;
          temp.innerHTML = iter.innerHTML;
-         console.log(iter.parentNode.classList);
-         parentNode.classList.remove('drop-down');
+         let ttt = e.target.parentNode;
+         iter.parentNode.classList.remove('drop-down');
       });  
    });
 }
@@ -42,4 +50,33 @@ function removeActive(i) {
       if (index != i)
          iter.lastElementChild.classList.remove('drop-down');
    });
+}
+
+
+// API
+let url = "https://opentdb.com/api.php?amount=3"
+
+fetchData.addEventListener('click', e => {
+   e.preventDefault();
+   createAJAXrequest(options)
+});
+
+function createAJAXrequest(opt) {
+   Array.from(opt).forEach((iter) => {
+      console.log(iter.previousElementSibling.innerHTML);
+   }) 
+}
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.send()
+
+xhr.onload = function () {
+   if (this.status == 200) {
+      // console.log(this.responseText);
+   }
+}
+
+xhr.onerror = function () {
+   console.log('error');
 }
