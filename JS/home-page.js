@@ -6,7 +6,6 @@ const welcome = document.getElementById('welcome');
 const customize = document.getElementById('customize');
 const fetchData = document.getElementById('fetch-data');
 
-
 start.addEventListener('click', () => {
    welcome.style.display = "none";
    customize.style.display = "flex";
@@ -52,10 +51,7 @@ function removeActive(i) {
    });
 }
 
-
 // API
-
-
 fetchData.addEventListener('click', e => {
    e.preventDefault();
    createAJAXrequest(options);
