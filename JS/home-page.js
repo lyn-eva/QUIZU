@@ -6,6 +6,7 @@ const welcome = document.getElementById('welcome');
 const customize = document.getElementById('customize');
 const fetchData = document.getElementById('fetch-data');
 
+// events
 start.addEventListener('click', () => {
    welcome.style.display = "none";
    customize.style.display = "flex";
@@ -38,12 +39,18 @@ function selectedTypes(opt) {
       iter.addEventListener('click', (e) => {
          let temp = iter.parentNode.previousElementSibling;
          temp.innerHTML = iter.innerHTML;
-         let ttt = e.target.parentNode;
+         temp.className = e.target.id; // for ajax
          iter.parentNode.classList.remove('drop-down');
       });  
    });
 }
 
+fetchData.addEventListener('click', e => {
+   e.preventDefault();
+   createAJAXrequest(options);
+});
+
+// functions
 function removeActive(i) {
    Array.from(optionBox).forEach( (iter, index) => {
       if (index != i)
@@ -51,25 +58,24 @@ function removeActive(i) {
    });
 }
 
-// API
-fetchData.addEventListener('click', e => {
-   e.preventDefault();
-   createAJAXrequest(options);
-});
-
 function createAJAXrequest(opt) {
    let url = "https://opentdb.com/api.php?"
-   const amount = opt[0].previousElementSibling.innerText;
-   const category = opt[1].previousElementSibling.innerText;
-   const diff = opt[2].previousElementSibling.innerText;
-   const type = opt[3].previousElementSibling.innerText;
+   const amount = opt[0].previousElementSibling.className;
+   const category = opt[1].previousElementSibling.className;
+   const diff = opt[2].previousElementSibling.className;
+   const type = opt[3].previousElementSibling.className;
    
-   url += `amount=${amount}`;
+   url += `amount=${amount.slice(1)}`;
 
-   if (category != "Any Category") {
-      url += ``
+   if (category != "" && category != "any") {
+      url += `&category=${category}`;
    }
-   console.log(url);
+   if (diff != "" && diff != 'any') {
+      url += `&difficulty=${diff}`;
+   }
+   if (type != "" && type != "any") {
+      url += `&type=${type}`;
+   }
 
    // request to API
    const xhr = new XMLHttpRequest();
@@ -78,7 +84,9 @@ function createAJAXrequest(opt) {
 
    xhr.onload = function () {
       if (this.status == 200) {
+         const q_set = JSON.parse(this.responseText)
          console.log(this.responseText);
+         addToLoacl(this.responseText);
       }
    }
 
@@ -87,3 +95,9 @@ function createAJAXrequest(opt) {
    }
 }
 
+function addToLoacl(ary) {
+   if (localStorage.getItem('questions') == null) {
+      localStorage.setItem('questions', '');
+   };
+   localStorage.setItem('questions', ary);
+}

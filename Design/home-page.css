@@ -30,6 +30,7 @@ label {
    box-sizing: border-box;
    height: 2rem;
    border: 3px solid;
+   border-color: inherit;
    border-radius: 6px;
    padding: 5px 1.7rem 5px .5rem;
    position: relative;
@@ -76,6 +77,7 @@ span {
    width: 9px;
    height: 9px;
    border: 3px solid;
+   border-color: inherit;
    border-left: none;
    border-top: none;
    transform: rotate(45deg);
@@ -85,6 +87,10 @@ span {
 
 .custom-select:hover, .option:hover {
    cursor: pointer;
+}
+
+.custom-select:hover{
+   border-color: #00f;
 }
 
 .custom-select:hover .custom-arrow {
