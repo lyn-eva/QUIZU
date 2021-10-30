@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+.ctr {
+   /* margin-top: 3vh; */
+}
+
+#question, .choice {
+   display: flex;
+   background-color: #fff;
+   text-align: left;
+   /* outline: 1px solid red; */
+}
+
+#question {
+   border: 2px solid;
+   border-radius: 8px;
+   padding: 1.3rem 1.6rem;
+   font-weight: 500;
+   font-size: 1.3rem;
+   position: relative;
+}
+
+#question span {
+   min-width: 2.6rem;
+   /* outline: 1px solid red; */
+}
+
+#question p {
+   margin-left: .8rem;
+}
+
+#question::before, #question::after {
+   position: absolute;
+   font-family: "Ephesis";
+   font-weight: bold;
+   font-size: 4rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   color: #00f;
+}
+
+#question::before {
+   top: -1.2rem;
+   left: 4px;
+   content: '\201c';
+}
+
+#question::after {
+   bottom: 1.2rem;
+   right: 8px;
+   content: '\201d';
+}
+
+#choices {
+   padding: 0 2rem;
+}
+
+.choice {
+   border: 2px solid;
+   border-radius: 8px;
+   padding: 8px 1.5rem;
+   cursor: pointer;
+}
+
+.choice + .choice {
+   margin-top: 1rem;
+}
+
+.choice span {
+   border: 3px solid;
+   border-radius: 50%;
+   width: 1.7rem;
+   height: 1.6rem;
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: 500;
+   padding-top: 2px;
+   color: #00f;
+}
+
+.choice p {
+   font-size: 1.2rem;
+   margin: 4px 0 0 1.5rem;
+}

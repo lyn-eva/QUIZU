@@ -15,8 +15,8 @@ body {
 
 .ctr {
    width: 90%;
-   margin: 10rem auto 0;
-   /* outline: 1px solid red; */
+   max-width: 650px;
+   margin: 20vh auto 0;
 }
 
 .flex {

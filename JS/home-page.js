@@ -48,6 +48,7 @@ function selectedTypes(opt) {
 fetchData.addEventListener('click', e => {
    e.preventDefault();
    createAJAXrequest(options);
+   window.location.assign("../Skeleton/main-page.html");
 });
 
 // functions
