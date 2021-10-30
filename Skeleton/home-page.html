@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="../Design/utility.css">
    <link rel="stylesheet" href="../Design/home-page.css">
    <link rel="icon" href="../images/favicon-16x16.png">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
    <main class="ctr">
@@ -20,6 +21,10 @@
       </div>
 
       <div id="customize" class="flex mt-3">
+         <div id="note">
+            <p>Some Categories don't have option for <span>True / False</span>.</p>
+            <p>You have to choose <span>Multiple Choice</span> for those ones.</p>
+         </div>
          <div class="custom-select">
             <label for="questions">Number of Questions:</label>
             <div id="questions" class="option-box">
@@ -38,7 +43,7 @@
                   <li class="option" id="D30">30</li>            
                </ul>
             </div>
-            <div class="custom-arrow"></div>
+            <i class="fas fa-chevron-down custom-arrow"></i>
          </div>
          <div class="custom-select">
             <label for="category">Select Category:</label>
@@ -72,7 +77,7 @@
                   <li class="option" id="32">Entertainment: Cartoon &amp; Animations</li>
                </ul>
             </div>
-            <div class="custom-arrow"></div>
+            <i class="fas fa-chevron-down custom-arrow"></i>
          </div>
          <div class="custom-select">
             <label for="difficulty">Select Difficulty:</label>
@@ -85,7 +90,7 @@
                   <li class="option" id="hard" class="option">Hard</li>
                </ul>
             </div>
-            <div class="custom-arrow"></div>
+            <i class="fas fa-chevron-down custom-arrow"></i>
          </div>
          <div class="custom-select">
             <label for="type">Select Type:</label>
@@ -97,7 +102,7 @@
                   <li class="option" id="boolean" class="option">True / False</li>
                </ul>
             </div>
-            <div class="custom-arrow"></div>
+            <i class="fas fa-chevron-down custom-arrow"></i>
          </div>
          <a class="btn mt-2" id="fetch-data" href="">Start Playing</a>
          <button class="btn mt-1" id="back">Go Back</button>
