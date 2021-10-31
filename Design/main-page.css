@@ -60,6 +60,7 @@
    border-radius: 8px;
    padding: 8px 1.5rem;
    cursor: pointer;
+   transition: .1s;
 }
 
 .choice + .choice {
@@ -75,10 +76,27 @@
    font-size: 1.2rem;
    font-weight: 500;
    padding-top: 2px;
-   color: #00f;
+   transition: .5s;
 }
 
 .choice p {
    font-size: 1.2rem;
    margin: 4px 0 0 1.5rem;
+}
+
+.choice:hover {
+   cursor: pointer;
+   color: #00f;
+   transform: scale(1.01);
+   border-width: 3px;
+}
+
+.choice:hover p {
+   font-weight: 500;
+}
+
+.true {
+   background-color: rgba(69, 236, 69, 0.897);
+   color: #fff;
+   border-color: #000;
 }
