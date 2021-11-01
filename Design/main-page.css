@@ -1,14 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
 
 .ctr {
-   /* margin-top: 3vh; */
+   margin-top: 10vh;
+}
+
+#stats {
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+#progress span, #points {
+   font-size: 1.5rem;
+   margin-right: 1.5rem;
+   background-color: #fff;
+}
+
+#points span {
+   color: #00f;
+}
+
+#progress-bar {
+   width: 15rem;
+   height: 13px;
+   border: 2px solid;
+   padding: 1px;
+   box-sizing: border-box;
+}
+
+#bar {
+   width: 10%;
+   height: 100%;
+   background-color: #00f;
 }
 
 #question, .choice {
    display: flex;
    background-color: #fff;
    text-align: left;
-   /* outline: 1px solid red; */
 }
 
 #question {
@@ -60,7 +88,7 @@
    border-radius: 8px;
    padding: 8px 1.5rem;
    cursor: pointer;
-   transition: .1s;
+   transition: .3s;
 }
 
 .choice + .choice {
@@ -84,19 +112,19 @@
    margin: 4px 0 0 1.5rem;
 }
 
-.choice:hover {
-   cursor: pointer;
-   color: #00f;
-   transform: scale(1.01);
-   border-width: 3px;
+.choice span, .choice p {
+   pointer-events: none;
 }
 
-.choice:hover p {
-   font-weight: 500;
+.choice:hover {
+   cursor: pointer;
+   transform: scale(1.01);
 }
 
 .true {
-   background-color: rgba(69, 236, 69, 0.897);
-   color: #fff;
-   border-color: #000;
+   color: rgb(0, 209, 0);
+}
+
+.false {
+   color: red;
 }
