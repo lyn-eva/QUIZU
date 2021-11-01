@@ -1,13 +1,16 @@
 const questionID = document.getElementById('question').lastElementChild;
 const choice_text = Array.from(document.getElementsByClassName('choice-text'));
 const choices = Array.from(document.getElementsByClassName('choice'));
+const current_no = document.getElementById('no.');
+const bar = document.getElementById('bar');
+const points = document.getElementById('point');
 
 // parse localstorage
 let q_set = JSON.parse(localStorage.getItem('questions'));
 let questions = q_set["results"];
 console.log(questions);
 
-let q_no = 0, point = 0;
+let q_no = 0, max_q = 3;
 startGame();
 
 
@@ -19,13 +22,13 @@ choices.forEach( choice => {
 
       if (temp == questions[index-1]["correct_answer"]) {
          clc = true;   
-         point += 10;
-         console.log(point);
-      }
+         points.innerHTML = parseInt(points.innerHTML) + 10; // this is legit 0-0-
+      } 
+
       e.target.classList.add(clc);
       setTimeout(() => {
          e.target.classList.remove(clc);
-         if (index < len) 
+         if (index < len)
             nextQuestion(questions[index]);
       }, 700);
    })
@@ -42,7 +45,10 @@ function nextQuestion(questObj) {
    if (questObj["type"] == "multiple") {
       mcq(questObj)
    }
+
    q_no++;
+   current_no.innerHTML = `${q_no} / ${max_q}`;
+   bar.style.width = `${(q_no/max_q) * 100}%`;
 }
 
 // mcq

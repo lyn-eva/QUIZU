@@ -48,6 +48,10 @@
    position: relative;
 }
 
+#stats, #question, #choices {
+   display: none;
+}
+
 #question span {
    min-width: 2.6rem;
    /* outline: 1px solid red; */
