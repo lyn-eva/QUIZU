@@ -117,8 +117,17 @@
    margin-left: 1.5rem;
 }
 
-.choice span, .choice p {
+.choice span, .choice p{
    pointer-events: none;
+}
+
+.bool {
+   justify-content: center;
+}
+
+.bool p {
+   margin-left: 0;
+   font-size: 1.4rem;
 }
 
 #omedetou p {
