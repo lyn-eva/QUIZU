@@ -4,15 +4,11 @@ const choices = Array.from(document.getElementsByClassName('choice'));
 const current_no = document.getElementById('no.');
 const bar = document.getElementById('bar');
 const points = document.getElementById('point');
-
+const final = document.getElementById('omedetou');
 // parse localstorage
 let q_set = JSON.parse(localStorage.getItem('questions'));
 let questions = q_set["results"];
 console.log(questions);
-
-let q_no = 0, max_q = 3;
-startGame();
-
 
 // eve
 choices.forEach( choice => {
@@ -30,9 +26,14 @@ choices.forEach( choice => {
          e.target.classList.remove(clc);
          if (index < len)
             nextQuestion(questions[index]);
+         else 
+            omedetou(points.innerHTML, len);
       }, 700);
    })
 })
+
+let q_no = 0, max_q = questions.length;
+startGame();
 
 // func
 function startGame() {// dont ne"d
@@ -45,7 +46,6 @@ function nextQuestion(questObj) {
    if (questObj["type"] == "multiple") {
       mcq(questObj)
    }
-
    q_no++;
    current_no.innerHTML = `${q_no} / ${max_q}`;
    bar.style.width = `${(q_no/max_q) * 100}%`;
@@ -55,8 +55,8 @@ function nextQuestion(questObj) {
 function mcq(obj) {
    let choices_array = obj["incorrect_answers"].concat(obj["correct_answer"])
    choices_array = shuffle(choices_array)
-   choice_text.forEach( (iter, i) => {
-      iter.innerHTML = choices_array[i];
+   choices.forEach( (iter, i) => {
+      iter.lastElementChild.innerHTML = choices_array[i];
    })
 }
 
@@ -68,5 +68,11 @@ function shuffle(que) {
       mixed.push(rand);
       que.splice(index, 1);
    }
-   return mixed
+   return mixed;
+}
+
+function omedetou(res, tot) {
+   document.getElementById('wrapper').style.display = "none";
+   final.style.display = "block"
+   final.lastElementChild.innerHTML = `You got <span>${res}</span> out of <span>${tot}0</span>.`;
 }

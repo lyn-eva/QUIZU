@@ -27,7 +27,8 @@
 }
 
 .custom-select {
-   width: 19rem;
+   width: 100%;
+   max-width: 19rem;
    position: relative;
 }
 

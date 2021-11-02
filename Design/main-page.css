@@ -48,13 +48,12 @@
    position: relative;
 }
 
-#stats, #question, #choices {
+#omedetou {
    display: none;
 }
 
 #question span {
    min-width: 2.6rem;
-   /* outline: 1px solid red; */
 }
 
 #question p {
@@ -93,6 +92,8 @@
    padding: 8px 1.5rem;
    cursor: pointer;
    transition: .3s;
+   display: flex;
+   align-items: center;
 }
 
 .choice + .choice {
@@ -102,7 +103,7 @@
 .choice span {
    border: 3px solid;
    border-radius: 50%;
-   width: 1.7rem;
+   min-width: 1.7rem;
    height: 1.6rem;
    text-align: center;
    font-size: 1.2rem;
@@ -113,11 +114,20 @@
 
 .choice p {
    font-size: 1.2rem;
-   margin: 4px 0 0 1.5rem;
+   margin-left: 1.5rem;
 }
 
 .choice span, .choice p {
    pointer-events: none;
+}
+
+#omedetou p {
+   font-size: 2rem;
+   margin-top: 4rem;
+}
+
+#omedetou span {
+   color: #00f;
 }
 
 .choice:hover {
@@ -131,4 +141,47 @@
 
 .false {
    color: red;
+}
+
+@media (max-width: 420px) {
+   #stats {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      gap: 1rem;
+   }
+   #progress span, #points {
+      margin: 0;
+   }
+   #points {
+      border: 2px solid;
+      border-radius: 8px;
+      padding: 5px 40px;
+   }
+
+   #question span {
+      min-width: 2rem;
+   }
+
+   #question p {
+      font-size: 1.2rem;
+      margin: 0;
+   }
+
+   #choices {
+      padding: 0;
+   }
+
+   .choice p {
+      font-size: .9rem;
+      margin-left: 1rem;
+   }
+
+   #omedetou h1 {
+      font-size: 2.1rem;
+   }
+
+   #omedetou p {
+      font-size: 1.5rem;
+      margin-top: 4rem;
+   }
 }

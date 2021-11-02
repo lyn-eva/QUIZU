@@ -48,7 +48,6 @@ function selectedTypes(opt) {
 fetchData.addEventListener('click', e => {
    e.preventDefault();
    createAJAXrequest(options);
-   window.location.assign("../Skeleton/main-page.html");
 });
 
 // functions
@@ -78,6 +77,8 @@ function createAJAXrequest(opt) {
       url += `&type=${type}`;
    }
 
+   console.log(url);
+
    // request to API
    const xhr = new XMLHttpRequest();
    xhr.open('GET', url, true);
@@ -86,8 +87,9 @@ function createAJAXrequest(opt) {
    xhr.onload = function () {
       if (this.status == 200) {
          const q_set = JSON.parse(this.responseText)
-         console.log(this.responseText);
+      
          addToLoacl(this.responseText);
+         window.location.assign("../Skeleton/main-page.html");
       }
    }
 
