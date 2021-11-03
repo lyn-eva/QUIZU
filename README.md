@@ -2,9 +2,9 @@
 
 You can select any category you wish and jump into quizzies.
 
-tech stack
-HTML
-CSS
+tech stack:
+HTML,
+CSS,
 Vanilla Javascript
 
 This project is inspired by a course from Udemy.
