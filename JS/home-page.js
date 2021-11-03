@@ -5,6 +5,7 @@ const back = document.getElementById('back');
 const welcome = document.getElementById('welcome');
 const customize = document.getElementById('customize');
 const fetchData = document.getElementById('fetch-data');
+const spinner = document.getElementById('spinning-loader');
 
 // events
 start.addEventListener('click', () => {
@@ -13,8 +14,8 @@ start.addEventListener('click', () => {
 });
 
 back.addEventListener('click', () => {
-   customize.style.display = "none"
-   welcome.style.display = "flex"
+   customize.style.display = "none";
+   welcome.style.display = "flex";
 })
 
 Array.from(optionBox).forEach( (item, index) => {
@@ -47,6 +48,8 @@ function selectedTypes(opt) {
 
 fetchData.addEventListener('click', e => {
    e.preventDefault();
+   customize.style.display = "none";
+   spinner.style.display = "flex";
    createAJAXrequest(options);
 });
 
@@ -76,8 +79,6 @@ function createAJAXrequest(opt) {
    if (type != "" && type != "any") {
       url += `&type=${type}`;
    }
-
-   console.log(url);
 
    // request to API
    const xhr = new XMLHttpRequest();
