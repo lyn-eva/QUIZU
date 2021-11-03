@@ -90,7 +90,7 @@ function createAJAXrequest(opt) {
          const q_set = JSON.parse(this.responseText)
       
          addToLoacl(this.responseText);
-         window.location.assign("./Skeleton/main-page.html");
+         window.location.assign("Skeleton/main-page.html");
       }
    }
 
