@@ -37,3 +37,9 @@ img {
 .four {
    top: 65%;
 }
+
+.btn {
+   display: block;
+   text-align: center;
+   margin: 2rem auto;
+}
