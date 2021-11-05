@@ -91,7 +91,7 @@
    border-radius: 8px;
    padding: 8px 1.5rem;
    cursor: pointer;
-   transition: .3s;
+   transition: .2s;
    display: flex;
    align-items: center;
 }

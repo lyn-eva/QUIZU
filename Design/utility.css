@@ -51,6 +51,11 @@ p a {
    transform: translateX(1rem);
 }
 
+.btn:active {
+   border-color: #0000ff;
+   color: #0000ff;
+}
+
 a:hover {
    color: crimson;
 }
