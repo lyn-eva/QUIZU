@@ -1,7 +1,7 @@
 # QUIZU is a quiz website powered by Open Trivia Database.
 
 You can select any category you wish and jump into quizzies.
-[go to site.](https://takamimusubinomikoto.github.io/QUIZU/)
+[go to site.](https://lyn-eva.github.io/QUIZU/)
 
 ## tech stack:
 - HTML
