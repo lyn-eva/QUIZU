@@ -8,8 +8,7 @@ const points = document.getElementById('point');
 const final = document.getElementById('omedetou');
 
 // parse localstorage
-let q_set = JSON.parse(localStorage.getItem('questions'));
-let questions = q_set["results"];
+const questions = JSON.parse(localStorage.getItem('questions'));
 
 let q_no = 0, max_q = questions.length;
 startGame();

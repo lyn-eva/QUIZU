@@ -103,11 +103,11 @@ label {
 }
 
 #spinner {
-   border: 10px solid #d1d0d0; /* Light grey */
-   border-top: 10px solid #3498db; /* Blue */
+   border: 7px solid #d1d0d0; /* Light grey */
+   border-top: 7px solid #000; /* Blue */
    border-radius: 50%;
-   width: 40px;
-   height: 40px;
+   width: 35px;
+   height: 35px;
    animation: spin 1s linear infinite;
 }
 
