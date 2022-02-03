@@ -7,7 +7,7 @@ const startGameBtn = document.getElementById("start-game");
 const spinner = document.getElementById("spinning-loader");
 
 const optionData = {
-  quizType: [
+  numOfQuestion: [
     { id: "D3", txt: "3" },
     { id: "D5", txt: "5" },
     { id: "D7", txt: "7" },
@@ -30,7 +30,7 @@ const optionData = {
     { id: "14", txt: "Entertainment: Television" },
     { id: "15", txt: "Entertainment: Video Games" },
     { id: "16", txt: "Entertainment: Board Games" },
-    { id: "17", txt: "Science &amp; Nature" },
+    { id: "17", txt: "Science & Nature" },
     { id: "18", txt: "Science: Computers" },
     { id: "19", txt: "Science: Mathematics" },
     { id: "20", txt: "Mythology" },
@@ -44,8 +44,8 @@ const optionData = {
     { id: "28", txt: "Vehicles" },
     { id: "29", txt: "Entertainment: Comics" },
     { id: "30", txt: "Science: Gadgets" },
-    { id: "31", txt: "Entertainment: Japanese Anime &amp; Manga" },
-    { id: "32", txt: "Entertainment: Cartoon &amp; Animations" },
+    { id: "31", txt: "Entertainment: Japanese Anime & Manga" },
+    { id: "32", txt: "Entertainment: Cartoon & Animations" },
   ],
   difficulty: [
     { id: "any", txt: "Any difficulty" },
@@ -59,20 +59,19 @@ const optionData = {
     { id: "boolean", txt: "True / False" },
   ],
 };
-
 // generate options dynamically
 Object.values(optionData).forEach((type, i) => {
-  const ul = document.createElement('ul');
-  ul.classList.add('options');
-  type.forEach(option => {
-    const li = document.createElement('li');
-    li.classList.add('option');
-    li.setAttribute('id', option.id);
+  const ul = document.createElement("ul");
+  ul.classList.add("options");
+  type.forEach((option) => {
+    const li = document.createElement("li");
+    li.classList.add("option");
+    li.setAttribute("id", option.id);
     li.innerText = option.txt;
     ul.appendChild(li);
-  })
+  });
   optionBox[i].appendChild(ul);
-})
+});
 
 // events
 start.addEventListener("click", () => {
@@ -88,13 +87,13 @@ back.addEventListener("click", () => {
 optionBox.forEach((item, index) => {
   item.addEventListener("click", (e) => {
     const dropDown = e.target.lastElementChild;
-    if (dropDown !== null && dropDown.className !== "options drop-down") {
+    if (!dropDown) return;
+    if (dropDown.className.includes("drop-down")) {
+      dropDown.classList.remove("drop-down");
+    } else {
       removeActive(index);
       dropDown.classList.add("drop-down");
-
       selectedTypes(dropDown);
-    } else if (dropDown !== null && dropDown.className == "options drop-down") {
-      dropDown.classList.remove("drop-down");
     }
   });
 });
@@ -103,7 +102,6 @@ function selectedTypes(dropDown) {
   const parentOption = dropDown.previousElementSibling;
   dropDown.childNodes.forEach((option) => {
     option.addEventListener("click", function (e) {
-      //  let parentOption = iter.parentNode.previousElementSibling;
       parentOption.innerHTML = option.innerHTML;
       parentOption.className = e.target.id; // for ajax
       dropDown.classList.remove("drop-down");
