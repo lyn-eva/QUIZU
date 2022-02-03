@@ -1,117 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Quizu</title>
-   <link rel="stylesheet" href="./Design/utility.css">
-   <link rel="stylesheet" href="./Design/home-page.css">
-   <link rel="icon" href="./images/favicon-16x16.png">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-   <main class="ctr">
-      <p class="small">Questions are contributed by <a href="https://opentdb.com/" aria-label="opentdb.com">Open Trivia DB</a>.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizu</title>
+    <link rel="stylesheet" href="./Design/utility.css" />
+    <link rel="stylesheet" href="./Design/home-page.css" />
+    <link rel="icon" href="./images/favicon-16x16.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="ctr">
+      <p class="small">
+        Questions are contributed by
+        <a href="https://opentdb.com/" aria-label="opentdb.com"
+          >Open Trivia DB</a
+        >.
+      </p>
       <div id="welcome" class="flex">
-         <h1 class="large mt-2 mb-3">QUIZU</h1>
-         <button class="btn" id="start">Start Game</button>
-         <a class="btn mt-1" href="./Skeleton/guide.html">How to play?</a>
+        <h1 class="large mt-2 mb-3">QUIZU</h1>
+        <button class="btn" id="start">Start Game</button>
+        <a class="btn mt-1" href="./Skeleton/guide.html">How to play?</a>
       </div>
 
       <div id="customize" class="flex mt-3">
-         <div id="note">
-            <p>Some Categories don't have option for <span>True / False</span>.</p>
-            <p>You have to choose <span>Multiple Choice</span> for those ones.</p>
-         </div>
-         <div class="custom-select">
-            <label for="questions">Number of Questions:</label>
-            <div id="questions" class="option-box">
-               <span class="D7">7</span>
-               <ul class="options">
-                  <li class="option" id="D3">3</li>
-                  <li class="option" id="D5">5</li>
-                  <li class="option" id="D7">7</li>
-                  <li class="option" id="D10">10</li>
-                  <li class="option" id="D13">13</li>
-                  <li class="option" id="D15">15</li>
-                  <li class="option" id="D17">17</li>
-                  <li class="option" id="D20">20</li>
-                  <li class="option" id="D23">23</li>
-                  <li class="option" id="D25">25</li>
-                  <li class="option" id="D30">30</li>            
-               </ul>
-            </div>
-            <i class="fas fa-chevron-down custom-arrow"></i>
-         </div>
-         <div class="custom-select">
-            <label for="category">Select Category:</label>
-            <div id="category" class="option-box">
-               <span>Any Category</span>
-               <ul class="options">
-                  <li class="option" id="any">Any Category</li>
-                  <li class="option" id="9">General Knowledge</li>
-                  <li class="option" id="10">Entertainment: Books</li>
-                  <li class="option" id="11">Entertainment: Film</li>
-                  <li class="option" id="12">Entertainment: Music</li>
-                  <li class="option" id="13">Entertainment: Musicals &amp; Theatres</li>
-                  <li class="option" id="14">Entertainment: Television</li>
-                  <li class="option" id="15">Entertainment: Video Games</li>
-                  <li class="option" id="16">Entertainment: Board Games</li>
-                  <li class="option" id="17">Science &amp; Nature</li>
-                  <li class="option" id="18">Science: Computers</li>
-                  <li class="option" id="19">Science: Mathematics</li>
-                  <li class="option" id="20">Mythology</li>
-                  <li class="option" id="21">Sports</li>
-                  <li class="option" id="22">Geography</li>
-                  <li class="option" id="23">History</li>
-                  <li class="option" id="24">Politics</li>
-                  <li class="option" id="25">Art</li>
-                  <li class="option" id="26">Celebrities</li>
-                  <li class="option" id="27">Animals</li>
-                  <li class="option" id="28">Vehicles</li>
-                  <li class="option" id="29">Entertainment: Comics</li>
-                  <li class="option" id="30">Science: Gadgets</li>
-                  <li class="option" id="31">Entertainment: Japanese Anime &amp; Manga</li>
-                  <li class="option" id="32">Entertainment: Cartoon &amp; Animations</li>
-               </ul>
-            </div>
-            <i class="fas fa-chevron-down custom-arrow"></i>
-         </div>
-         <div class="custom-select">
-            <label for="difficulty">Select Difficulty:</label>
-            <div id="difficulty" class="option-box">
-               <span>Any Difficulty</span>
-               <ul class="options">
-                  <li class="option" id="any" class="option">Any Difficulty</li>
-                  <li class="option" id="easy" class="option">Easy</li>
-                  <li class="option" id="medium" class="option">Medium</li>
-                  <li class="option" id="hard" class="option">Hard</li>
-               </ul>
-            </div>
-            <i class="fas fa-chevron-down custom-arrow"></i>
-         </div>
-         <div class="custom-select">
-            <label for="type">Select Type:</label>
-            <div id="type" class="option-box">
-               <span>Any Type</span>
-               <ul class="options">
-                  <li class="option" id="any" class="option">Any Type</li>
-                  <li class="option" id="multiple" class="option">Multiple Choice</li>
-                  <li class="option" id="boolean" class="option">True / False</li>
-               </ul>
-            </div>
-            <i class="fas fa-chevron-down custom-arrow"></i>
-         </div>
-         <button class="btn mt-2" id="start-game" href="">Start Playing</button>
-         <button class="btn mt-1" id="back">Go Back</button>
+        <div id="note">
+          <p>
+            Some Categories don't have option for <span>True / False</span>.
+          </p>
+          <p>You have to choose <span>Multiple Choice</span> for those ones.</p>
+        </div>
+        <div class="custom-select">
+          <label for="questions">Number of Questions:</label>
+          <div id="questions" class="option-box">
+            <span class="D7">7</span>
+          </div>
+          <i class="fas fa-chevron-down custom-arrow"></i>
+        </div>
+        <div class="custom-select">
+          <label for="category">Select Category:</label>
+          <div id="category" class="option-box">
+            <span>Any Category</span>
+          </div>
+          <i class="fas fa-chevron-down custom-arrow"></i>
+        </div>
+        <div class="custom-select">
+          <label for="difficulty">Select Difficulty:</label>
+          <div id="difficulty" class="option-box">
+            <span>Any Difficulty</span>
+          </div>
+          <i class="fas fa-chevron-down custom-arrow"></i>
+        </div>
+        <div class="custom-select">
+          <label for="type">Select Type:</label>
+          <div id="type" class="option-box">
+            <span>Any Type</span>
+          </div>
+          <i class="fas fa-chevron-down custom-arrow"></i>
+        </div>
+        <button class="btn mt-2" id="start-game" href="">Start Playing</button>
+        <button class="btn mt-1" id="back">Go Back</button>
       </div>
 
       <div id="spinning-loader" class="flex">
-         <div id="spinner"></div>
-         <p class="mt-1">Loading... Please wait!</p>
+        <div id="spinner"></div>
+        <p class="mt-1">Loading... Please wait!</p>
       </div>
-   </main>
-   <script src="./JS/home-page.js"></script>
-</body>
+    </main>
+    <script src="./JS/home-page.js"></script>
+  </body>
 </html>
