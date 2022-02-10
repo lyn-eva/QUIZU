@@ -1,6 +1,6 @@
 # QUIZU is a quiz website powered by Open Trivia Database.
 
-You can select any category you wish and jump into quizzies.
+Select any category you wish and enjoy quizzies.
 [go to site.](https://lyn-eva.github.io/QUIZU/)
 
 ## tech stack:
@@ -8,5 +8,6 @@ You can select any category you wish and jump into quizzies.
 - CSS,
 - Vanilla Javascript
 
+This is a fun project I build while I was learning JS and DOM.
 This project is inspired by a course from Udemy.
 [Course link](https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/)
