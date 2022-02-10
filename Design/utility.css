@@ -10,7 +10,7 @@ body {
    height: 100vh;
    padding-top: 0.1px;
    text-align: center;
-   overflow: hidden;
+   /* overflow: hidden; */
 }
 
 .ctr {

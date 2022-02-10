@@ -1,196 +1,210 @@
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
 
 .ctr {
-   margin-top: 10vh;
+  margin-top: 10vh;
+  margin-bottom: 8rem;
 }
 
 #stats {
-   flex-direction: row;
-   justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-#progress span, #points {
-   font-size: 1.5rem;
-   margin-right: 1.5rem;
-   background-color: #fff;
+#progress span,
+#points {
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  background-color: #fff;
 }
 
 #points span {
-   color: #00f;
+  color: #00f;
 }
 
 #progress-bar {
-   width: 15rem;
-   height: 13px;
-   border: 2px solid;
-   padding: 1px;
-   box-sizing: border-box;
+  width: 15rem;
+  height: 13px;
+  border: 2px solid;
+  padding: 1px;
+  box-sizing: border-box;
 }
 
 #bar {
-   width: 10%;
-   height: 100%;
-   background-color: #00f;
+  width: 10%;
+  height: 100%;
+  background-color: #00f;
 }
 
-#question, .choice {
-   display: flex;
-   background-color: #fff;
-   text-align: left;
+#question,
+.choice {
+  display: flex;
+  background-color: #fff;
+  text-align: left;
 }
 
 #question {
-   border: 2px solid;
-   border-radius: 8px;
-   padding: 1.3rem 1.6rem;
-   font-weight: 500;
-   font-size: 1.3rem;
-   position: relative;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 1.3rem 1.6rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  position: relative;
 }
 
 #omedetou {
-   display: none;
+  display: none;
 }
 
 #question span {
-   min-width: 2.6rem;
+  min-width: 2.6rem;
 }
 
 #question p {
-   margin-left: .8rem;
+  margin-left: 0.8rem;
 }
 
-#question::before, #question::after {
-   position: absolute;
-   font-family: "Ephesis";
-   font-weight: bold;
-   font-size: 4rem;
-   width: 1.5rem;
-   height: 1.5rem;
-   color: #00f;
+#question::before,
+#question::after {
+  position: absolute;
+  font-family: "Ephesis";
+  font-weight: bold;
+  font-size: 4rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #00f;
 }
 
 #question::before {
-   top: -1.2rem;
-   left: 4px;
-   content: '\201c';
+  top: -1.2rem;
+  left: 4px;
+  content: "\201c";
 }
 
 #question::after {
-   bottom: 1.2rem;
-   right: 8px;
-   content: '\201d';
+  bottom: 1.2rem;
+  right: 8px;
+  content: "\201d";
 }
 
 #choices {
-   padding: 0 2rem;
+  padding: 0 2rem;
 }
 
 .choice {
-   border: 2px solid;
-   border-radius: 8px;
-   padding: 8px 1.5rem;
-   cursor: pointer;
-   transition: .2s;
-   display: flex;
-   align-items: center;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 8px 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .choice + .choice {
-   margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .choice span {
-   border: 3px solid;
-   border-radius: 50%;
-   min-width: 1.7rem;
-   height: 1.6rem;
-   text-align: center;
-   font-size: 1.2rem;
-   font-weight: 500;
-   padding-top: 2px;
-   transition: .5s;
+  border: 3px solid;
+  border-radius: 50%;
+  min-width: 1.7rem;
+  height: 1.6rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-top: 2px;
+  transition: 0.5s;
 }
 
 .choice p {
-   font-size: 1.2rem;
-   margin-left: 1.5rem;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
 }
 
-.choice span, .choice p{
-   pointer-events: none;
+.choice span,
+.choice p {
+  pointer-events: none;
 }
 
 .bool {
-   justify-content: center;
+  justify-content: center;
 }
 
 .bool p {
-   margin-left: 0;
-   font-size: 1.4rem;
+  margin-left: 0;
+  font-size: 1.4rem;
 }
-
+#omedetou {
+  font-size: 1.5rem;
+}
+#omedetou h1 {
+  font-size: 3.5rem;
+  margin-bottom: .5rem;
+}
+#omedetou div{
+  font-size: 2rem;
+  margin-top: 2rem;
+}
 #omedetou p {
-   font-size: 2rem;
-   margin-top: 4rem;
+  margin-bottom: 1rem;
 }
-
 #omedetou span {
-   color: #00f;
+  color: #00f;
 }
 
 .choice:hover {
-   cursor: pointer;
-   transform: scale(1.01);
+  cursor: pointer;
+  transform: scale(1.01);
 }
 
 .true {
-   color: rgb(0, 209, 0);
+  color: rgb(0, 209, 0);
 }
 
 .false {
-   color: red;
+  color: red;
 }
 
-@media (max-width: 420px) {
-   #stats {
-      flex-direction: column-reverse;
-      justify-content: space-between;
-      gap: 1rem;
-   }
-   #progress span, #points {
-      margin: 0;
-   }
-   #points {
-      border: 2px solid;
-      border-radius: 8px;
-      padding: 5px 40px;
-   }
+@media (max-width: 480px) {
+  #stats {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  #progress span,
+  #points {
+    margin: 0;
+  }
+  #points {
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 5px 40px;
+  }
 
-   #question span {
-      min-width: 2rem;
-   }
+  #question span {
+    min-width: 2rem;
+  }
 
-   #question p {
-      font-size: 1.2rem;
-      margin: 0;
-   }
+  #question p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
 
-   #choices {
-      padding: 0;
-   }
+  #choices {
+    padding: 0;
+  }
 
-   .choice p {
-      font-size: .9rem;
-      margin-left: 1rem;
-   }
+  .choice p {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+  }
 
-   #omedetou h1 {
-      font-size: 2.1rem;
-   }
+  #omedetou h1 {
+    font-size: 2.1rem;
+  }
 
-   #omedetou p {
-      font-size: 1.5rem;
-      margin-top: 4rem;
-   }
+  #omedetou p {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+  }
 }

@@ -58,7 +58,7 @@ function settle(e) {
   points.innerHTML = score;
 
   const unmount = () => {
-    if (q_no === questions.length) return omedetou(score, questions.length);
+    if (q_no === questions.length - 1) return omedetou(score, questions.length * 10);
     answer.classList.remove(clc);
     q_no++;
     // unmount
@@ -81,8 +81,10 @@ function shuffle(que) {
   return mixed;
 }
 
-function omedetou(res, tot) {
+function omedetou(res, total) {
   document.getElementById("wrapper").style.display = "none";
   final.style.display = "block";
-  final.lastElementChild.innerHTML = `You got <span>${res}</span> out of <span>${tot}0</span>.`;
+  final.lastElementChild.innerHTML = `<p>You got <span>${res}</span> out of <span>${total}</span>.</p><img style="display:inline-block; margin-top: 1rem; width:100%;" src=${
+    res < total / 2 ? "../images/mitsuri.jpg" : "../images/thumb-up.jpg"
+  } alt="I mustn't laugh"/>`;
 }
